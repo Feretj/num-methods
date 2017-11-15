@@ -4,10 +4,8 @@
 
 
 import argparse
-import gui
 
 parser = argparse.ArgumentParser(prog='PROG')
-parser.add_argument('--foo', action='store_true', help='foo help')
 subparsers = parser.add_subparsers(help='sub-command help', dest="command")
 
 # create the parser for the "a" command
@@ -22,6 +20,7 @@ parser_b.add_argument('--baz', choices='XYZ', help='baz help')
 def main():
     args = parser.parse_args()
     if args.command == "gui":
+        import gui
         gui.main()
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-from .gendata import gen_func
+from gendata import gen_func
 import numpy as np
 
 
